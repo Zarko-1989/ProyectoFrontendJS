@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos Aleatorios - Juan Jose Villa Freelancer</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+    <header>
+        <h1 class="titulo">Juan Jose Villa <span>Freelancer</span></h1>
+    </header>
+
+    <div class="nav-bg">
+        <nav class="navegacion-principal contenedor">
+            <a href="index.html">Inicio</a>
+            <a href="#">Sobre Mi</a>
+            <a href="clientes.html">Clientes</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="proyectos.html">Proyectos</a>
+        </nav>
+    </div>
+
+    <main class="contenedor sombra">
+        <h2>Proyectos Aleatorios</h2>
+
+        <table class="tabla-proyectos">
+            <thead>
+                <tr>
+                    <th>Proyecto</th>
+                    <th>Cliente</th>
+                    <th>Fecha de Finalización</th>
+                </tr>
+            </thead>
+            <tbody id="proyectos-body">
+                
+            </tbody>
+        </table>
+    </main>
+
+    <footer class="footer">
+        <p>Todos los derechos reservados. Juan Jose Villa Freelancer &copy;</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tbody = document.getElementById('proyectos-body');
+            
+            function generarFecha(minYear, maxYear) {
+                const start = new Date(minYear, 0, 1);
+                const end = new Date(maxYear, 11, 31);
+                return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+            }
+
+            const proyectos = [
+                { nombre: "Proyecto 1", cliente: "Cliente A", fecha_finalizacion: generarFecha(2020, 2022).toLocaleDateString('es-ES') },
+                { nombre: "Proyecto 2", cliente: "Cliente B", fecha_finalizacion: generarFecha(2019, 2023).toLocaleDateString('es-ES') },
+                { nombre: "Proyecto 3", cliente: "Cliente C", fecha_finalizacion: generarFecha(2021, 2024).toLocaleDateString('es-ES') },
+            ];
+
+            proyectos.forEach(proyecto => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${proyecto.nombre}</td>
+                    <td>${proyecto.cliente}</td>
+                    <td>${proyecto.fecha_finalizacion}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        });
+    </script>
+</body>
+</html>

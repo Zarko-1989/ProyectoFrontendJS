@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opiniones de Clientes - Juan Jose Villa Freelancer</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="titulo">Juan Jose Villa <span>Freelancer</span></h1>
+    </header>
+
+    <div class="nav-bg">
+        <nav class="navegacion-principal contenedor">
+            <a href="index.html">Inicio</a>
+            <a href="#">Sobre Mi</a>
+            <a href="clientes.html">Clientes</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="proyectos.html">Proyectos</a>
+        </nav>
+    </div>
+
+    <main class="contenedor sombra">
+        <h2>Opiniones de Clientes</h2>
+
+        <!-- Formulario de comentarios -->
+        <form id="formulario-comentarios" class="formulario">
+            <fieldset>
+                <legend>Deja tu opinión sobre nuestros proyectos</legend>
+
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" class="input-text" placeholder="Tu Nombre" required>
+                </div>
+
+                <div class="campo">
+                    <label for="comentario">Comentario</label>
+                    <textarea id="comentario" name="comentario" class="input-text" placeholder="Tu Comentario" required></textarea>
+                </div>
+
+                <div class="alinear-derecha flex">
+                    <input type="submit" class="boton" value="Enviar Comentario">
+                </div>
+            </fieldset>
+        </form>
+
+        <!-- Sección para mostrar comentarios -->
+        <section id="seccion-comentarios" class="seccion-comentarios">
+            <h3>Comentarios de Clientes</h3>
+            <ul id="lista-comentarios" class="lista-comentarios">
+                <!-- Los comentarios se cargarán aquí mediante JavaScript -->
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Todos los derechos reservados. Juan Jose Villa Freelancer &copy;</p>
+    </footer>
+
+    <script src="js/comentarios.js"></script>
+</body>
+</html>
